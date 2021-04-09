@@ -1,0 +1,30 @@
+### 01｜qsort()
+```C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+char voc[100][10];
+char temp[10];
+int compare(const void *s1, const void *s2)
+{
+	char *p1 = (char*) s1;
+	char *p2 = (char*) s2;
+	return strcmp(p1, p2);
+}
+int main()
+{
+	int N;
+	scanf("%d", &N);
+	for(int i=0; i<N; i++)
+	{
+		scanf("%s", voc[i]);
+	}
+	
+	qsort(voc, N, 10, compare);
+	
+	for(int i=0; i<N; i++)
+	{
+		printf("%s\n", voc[i]);
+	}
+}
+```
