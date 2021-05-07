@@ -103,6 +103,7 @@ int main()
 
     printf("%c %d", box.c, box.ans);
 }
+```
 
 ### 05｜UVA 10062
 ```C
