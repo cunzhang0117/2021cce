@@ -122,3 +122,55 @@ int main()
 	}
 }
 ```
+
+### 06｜
+```C
+#include <stdlib.h>
+char line[2000];
+typedef struct data
+{
+	int ans;
+	char c;
+}DATA;
+DATA box[256];
+int compare(const void *p1, const void *p2)
+{
+	DATA b1 = *(DATA*) p1;
+	DATA b2 = *(DATA*) p2;
+	if(b1.ans > b2.ans) return 1;
+	if(b1.ans == b2.ans)
+	{
+		if(b1.c>b2.c) return -1;
+		if(b1.c==b2.c) return 0;
+		if(b1.c<b2.c) return 1;
+	}
+	if(b1.ans < b2.ans) return -1;
+}
+int main()
+{
+	for(int t=0; gets(line); t++)
+	{
+	
+		for(int i=0; i<256; i++)
+		{
+			box[i].ans=0;
+			box[i].c=i;	
+		}
+
+	
+		for(int i=0; line[i]!=0; i++)
+		{
+			char c = line[i];
+			box[c].ans++;	//統計到ans[]內
+		}
+		
+		qsort(box, 256, sizeof(DATA), compare);
+		
+		if(t>0) printf("\n");
+		for(int i=0; i<256; i++)
+		{
+			if(box[i].ans>0) printf("%d %d\n",box[i].c, box[i].ans);
+		}
+	}
+}
+```
