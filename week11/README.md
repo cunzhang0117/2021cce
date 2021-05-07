@@ -67,3 +67,57 @@ int main()
 	}
 }
 ```
+
+### 03｜struct 結構
+```C
+#include <stdio.h>
+struct data
+{
+    int ans;
+    char c;
+};
+struct data box;
+int main()
+{
+    box.ans=1;
+    box.c='A';
+
+    printf("%c %d", box.c, box.ans);
+}
+```
+
+### 04｜typedef 
+```C
+#include <stdio.h>
+typedef struct data
+{
+    int ans;
+    char c;
+}DATA;
+//struct data box;
+DATA box;
+int main()
+{
+    box.ans=1;
+    box.c='A';
+
+    printf("%c %d", box.c, box.ans);
+}
+
+### 05｜UVA 10062
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char line[2000];
+int main()
+{
+	for(int t=0; gets(line); t++)
+	{
+		if(t>0) printf("\n");
+		printf("abc\n");
+		printf("abc\n");
+		printf("abc\n");
+	}
+}
+```
