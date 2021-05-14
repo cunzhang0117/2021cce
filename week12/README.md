@@ -53,6 +53,17 @@ int main()
 					c[i]=c[j];
 					c[j]=t;
 				}
+				
+				if(ans[i]==ans[j]&&c[i]<c[j])	//當右側相同，且左側前數小於後數
+				{
+					int temp = ans[i];
+					ans[i]=ans[j];
+					ans[j]=temp;
+					
+					char t=c[i];
+					c[i]=c[j];
+					c[j]=t;
+				}
 			}
 		}
 		if(t>0) printf("\n");
