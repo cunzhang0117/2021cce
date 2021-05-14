@@ -116,6 +116,12 @@ int main()
 ```C
 #include <stdio.h>
 int a[1000];
+void swap(int i, int j)
+{
+	int temp=a[i];
+	a[i]=a[j];
+	a[j]=temp;
+}
 int main()
 {
 	int N, M;
@@ -124,6 +130,20 @@ int main()
 		for(int i=0; i<N; i++)
 		{
 			scanf("%d", &a[i]);
+		}
+		
+		for(int i=0; i<N; i++)
+		{
+			for(int j=i+1; j<N; j++)
+			{
+				if(a[i]%M > a[j]%M) swap(i, j);	//餘數小的在上面
+				if(a[i]%M == a[j]%M)	//餘數相同
+				{
+					if(a[i]%2==0 && a[j]%2!=0) swap(i, j);	//偶數V.s基數，基數在上面
+					if(a[i]%2==0 && a[j]%2==0 && a[i]>a[j]) swap(i, j);	//偶數v.s偶數，小的在上面
+					if(a[i]%2!=0 && a[j]%2!=0 && a[i]<a[j]) swap(i, j);	//基數v.s基數，大的在上面
+				}
+			}
 		}
 		
 		printf("%d %d\n", N, M);
