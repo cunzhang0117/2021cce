@@ -75,3 +75,25 @@ int main()
 }
 
 ```
+
+### 03｜Train Swapping
+```C
+#include <stdio.h>
+int a[100];
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	for(int i=0; i<n; i++)
+	{
+		int t;
+		scanf("%d", &t);
+		for(int j=0; j<t; j++)
+		{
+			scanf("%d", &a[j]);
+		}
+		int ans=0;
+		printf("Optimal train swapping takes %d swaps.\n", ans);
+	}
+}
+```
