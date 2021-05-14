@@ -93,6 +93,20 @@ int main()
 			scanf("%d", &a[j]);
 		}
 		int ans=0;
+		
+		for(int k=0; k<t-1; k++)	//泡泡排序法
+		{
+			for(int j=0; j<t-1; j++)
+			{
+				if(a[j]>a[j+1])
+				{
+					int temp=a[j];
+					a[j]=a[j+1];
+					a[j+1]=temp;
+					ans++;
+				}
+			}
+		}
 		printf("Optimal train swapping takes %d swaps.\n", ans);
 	}
 }
