@@ -34,6 +34,6 @@ void draw(){
   text("總秒數:" + total, 100,200);
   int ans=total2-total;
   int hh=ans/60/60%60, mm=ans/60%60, ss=ans%60;
-  text("還剩下:"+ hh + ":" + mm + ":" + ss, 100, 300);
+  text("還剩下:"+ nf(hh,2) + ":" + nf(mm,2) + ":" + nf(ss,2), 100, 300);
 }
 ```
