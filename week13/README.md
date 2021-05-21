@@ -23,6 +23,7 @@ void setup(){
 void draw(){
   background(#FFA488);
   textSize(50);
+  fill(#AA0000);  //字的顏色
   int h=hour();  //小時
   int m=minute();  //分鐘
   int s=second();  //秒
