@@ -15,3 +15,17 @@ void mousePressed(){
   a++;
 }
 ```
+
+```C
+void setup(){
+  size(1024, 400);
+}
+void draw(){
+  background(#FFA488);
+  textSize(50);
+  int h=hour();  //小時
+  int m=minute();  //分鐘
+  int s=second();  //秒
+  text("Now:"+ h + ":" + m + ":" + s, 100, 100);
+}
+```
