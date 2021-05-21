@@ -1,3 +1,4 @@
+```C
 void setup(){    //只做一次設定
   size(1024, 400);
 }
@@ -13,3 +14,4 @@ int a=0;
 void mousePressed(){
   a++;
 }
+```
