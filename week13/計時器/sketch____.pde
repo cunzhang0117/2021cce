@@ -1,0 +1,19 @@
+void setup(){
+  size(1024, 400);
+  textFont(createFont("標楷體", 50));  //設字型
+}
+void draw(){
+  background(#FFA488);
+  textSize(50);
+  fill(#AA0000);
+  int h=hour();  //小時
+  int m=minute();  //分鐘
+  int s=second();  //秒
+  text("Now:"+ h + ":" + m + ":" + s, 100, 100);  //現在時間
+  int total = h*60*60 + m*60 + s;  //總秒數
+  int total2= 12*60*60+ 0*60 + 0;  //目標時間
+  text("總秒數:" + total, 100,200);
+  int ans=total2-total;
+  int hh=ans/60/60%60, mm=ans/60%60, ss=ans%60;
+  text("還剩下:"+ hh + ":" + mm + ":" + ss, 100, 300);
+}
