@@ -43,21 +43,24 @@ int []a= new int[49];  //宣告49格
 void setup(){
   size(400, 200);
   textSize(30);
-  for(int i=0; i<49; i++) a[i]=i+1;
-}
-void draw(){
-  background(#FFA488);
-  fill(#AA0000);
-  for(int i=0; i<6; i++){
-    text(a[i], i*55, 100);
-  }
-}
-void mousePressed(){
-  for(int i=0; i<10000; i++){
+  for(int i=0; i<49; i++) a[i]=i+1;  //丟入號碼
+    for(int i=0; i<10000; i++){  //洗牌
     int i1=(int)random(49), i2=(int)random(49);
     int temp=a[i1];
     a[i1]=a[i2];
     a[i2]=temp;
   }
+}
+int N=0;
+void draw(){
+  background(#FFA488);
+  for(int i=0; i<N && i<=6; i++){
+    fill(255); ellipse(52+i*52, 103, 45, 45);  //球
+    textAlign(CENTER, CENTER);  //文字居中
+    fill(#AA0000); text(a[i], 52+i*52, 100);
+  }
+}
+void mousePressed(){
+  N++;  //按一下出現一顆球
 }
 ```
