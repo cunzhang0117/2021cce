@@ -36,3 +36,28 @@ void mousePressed(){  //點擊會隨機交換兩數的位置
   a[i2]=temp;
 }
 ```
+
+### 大樂透
+```c
+int []a= new int[49];  //宣告49格
+void setup(){
+  size(400, 200);
+  textSize(30);
+  for(int i=0; i<49; i++) a[i]=i+1;
+}
+void draw(){
+  background(#FFA488);
+  fill(#AA0000);
+  for(int i=0; i<6; i++){
+    text(a[i], i*55, 100);
+  }
+}
+void mousePressed(){
+  for(int i=0; i<10000; i++){
+    int i1=(int)random(49), i2=(int)random(49);
+    int temp=a[i1];
+    a[i1]=a[i2];
+    a[i2]=temp;
+  }
+}
+```
