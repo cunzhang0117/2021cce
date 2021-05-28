@@ -51,16 +51,22 @@ void setup(){
     a[i2]=temp;
   }
 }
-int N=0;
+int N=0, rolling=0;
 void draw(){
   background(#FFA488);
   for(int i=0; i<N && i<=6; i++){
-    fill(255); ellipse(52+i*52, 103, 45, 45);  //球
+    int x=52+i*52;
+    if(i==N-1 && rolling>0){
+      x +=rolling;
+      rolling-=3;
+    }
+    fill(255); ellipse(x, 103, 45, 45);  //球
     textAlign(CENTER, CENTER);  //文字居中
-    fill(#AA0000); text(a[i], 52+i*52, 100);
+    fill(#AA0000); text(a[i], x, 100);
   }
 }
 void mousePressed(){
   N++;  //按一下出現一顆球
+  rolling=300;
 }
 ```
