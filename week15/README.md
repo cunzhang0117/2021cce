@@ -10,6 +10,6 @@ void draw()  //畫圖，每秒60次
 {
   background(41,109,207);
   int s=second();
-  text(s, 100, 100);
+  text(9-s%10, 100, 100);  //倒數
 }
 ```
