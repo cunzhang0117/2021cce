@@ -1,6 +1,6 @@
 ### CountDown
 ```C
-import processing.sound.*;
+import processing.sound.*;  //使用聲音的函式庫
 SoundFile player;
 void setup()  //設定，只做一次
 {
@@ -14,9 +14,6 @@ void draw()  //畫圖，每秒60次
   background(41,109,207);
   int s=second();
   text(9-s%10, 100, 100);  //倒數
-}
-void mousePressed()
-{
-  player.play();
+  if(9-s%10==0) player.play();
 }
 ```
