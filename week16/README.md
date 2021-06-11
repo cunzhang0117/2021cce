@@ -37,7 +37,6 @@ void setup(){
   size(400, 200);
   textSize(40);
 }
-int degree = 0;
 void draw(){
   background(#E5BCA7);
   fill(#C97449);
