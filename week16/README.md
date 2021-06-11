@@ -43,3 +43,28 @@ void draw(){
   arc(100, 100, 180, 180, radians(90), radians(180));
 }
 ```
+
+### 轉動
+```C
+void setup(){
+  size(400, 200);
+  textSize(40);
+}
+float shift=0, v=0;
+void mousePressed(){
+  v = random(10)+5;  //取亂數
+}
+void draw(){
+  background(#E5BCA7);
+  float start = radians(90+shift);
+  float stop = radians(180+shift);
+  fill(#C97449);
+  arc(100, 100, 180, 180, start, stop);
+  if(v>0.1){  //還有速度時
+    shift+=v;  //轉動的速度
+    v=v*0.99;  //慢慢減速
+  }
+  text(shift, 200, 100);
+  text(v, 200, 150); 
+}
+```
