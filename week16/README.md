@@ -30,9 +30,9 @@ void draw(){
   arc(100, 100, 180, 180, 0, stop);
   if(mousePressed) degree++;
 }
-```
-OR
-```c
+
+//OR
+
 void setup(){
   size(400, 200);
   textSize(40);
