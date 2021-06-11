@@ -79,11 +79,11 @@ void mousePressed(){
 }
 void draw(){
   background(#E5BCA7);
-  fill(#C97449);
   for(int i=0; i<24; i++){
     if(i%3==0) fill(#393937);
     if(i%3==1) fill(255);
     if(i%3==2) fill(#FFFA9B);
+    if(i==0) fill(#C97449);
     float start = radians(0+shift+i*360/24);
     float stop = radians(360/24+shift+i*360/24);
     arc(100, 100, 180, 180, start, stop);
