@@ -22,7 +22,7 @@ void keyPressed(){
   if(key == ENTER){  //算分數
     if(line.equals(Q[Qi])==true){  //如果字相同
       score++;
-      Qi++;
+      Qi = int (random(Q.length));
       line = "";
     }else score--;
   }
